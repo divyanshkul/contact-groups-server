@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Welcome</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="stylesheets/loginStyle.css" />
+</head>
+<body>
+  <div id="heading_div">
+      <h3>Contacts Group Server</h3>
+  </div>
+  <div id="login_div" class="mainDiv">
+    <h4>Sign In</h4>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+    <button onclick="login()">Login to Account</button>
+    <div class="googleButtons">
+        <button id="googlePopup" onclick="signInWithGoogle()" > Sign In with <i class="fa fa-google"> </i> Popup </button>
+        <button id="googleRedirect" onclick="signInWithGoogleRedirect()">Sign In with <i class="fa fa-google"></i>  Redirect</button>
+    </div>
+  </div>
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome!</h3>
+    <p id="user_para"></p>
+    <button onclick="logout()">Logout</button>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="js/script.js"></script>
+  <script src = "https://apis.google.com/js/platform.js" async defer></script>
+</body>
+</html>
