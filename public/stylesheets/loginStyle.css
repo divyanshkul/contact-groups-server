@@ -1,0 +1,87 @@
+body {
+  background: #fff;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;  
+  font-size: 16px;
+}
+
+input, button {
+font-family: 'Open Sans', sans-serif;
+
+  
+}
+
+.mainDiv, .loggedin-div {
+  width: 30%;
+  margin: 0px auto;
+  margin-top: 80px; 
+  display: none;
+}
+
+.mainDiv input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+}
+
+.mainDiv input:focus {
+  border: 1px solid #777;
+}
+
+.mainDiv button, .loggedin-div button {
+  background: #5d8ffc;
+  color: #fff;
+  border: 1px solid #5d8ffc;
+  border-radius: 5px;
+  padding: 15px;
+  display: block;
+  width: 100%;  
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+}
+
+
+.mainDiv button:hover, .loggedin-div button:hover {
+  background: #fff;
+  color: #5d8ffc;
+  border: 1px solid #5d8ffc;
+  cursor: pointer;
+}
+.googleButttons button {
+
+  text-align: center;
+
+  float:left;  
+  position: absolute;
+  
+}
+
+.googleButtons button {
+  margin-top: 20px;
+width: 46%;
+ float: left;
+ position: relative;
+}
+
+#googleRedirect {
+  margin-left: 30px;
+}
+
+#heading_div {
+    margin: auto;
+    margin-top: 60px;
+    width: 50%;
+    border: 3px solid;
+    border-color: #90CAF9;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px
+}
