@@ -1,5 +1,8 @@
 # contact-groups-server
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4cfef7538dfe421a97985df2a0d1a662)](https://www.codacy.com/app/jboss-outreach/contact-groups-server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jboss-outreach/contact-groups-server&amp;utm_campaign=Badge_Grade)
+
+[![Build Status](https://travis-ci.org/jboss-outreach/contact-groups-server.svg?branch=master)](https://travis-ci.org/jboss-outreach/contact-groups-server)
 
 
 ## Setting up the app

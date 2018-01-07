@@ -5,7 +5,7 @@ var router = express.Router();
 var Contact = require('../../models/contacts.js');
 
 router.get('/', function(req, res, next) {
-    Contact.findAsync()
+    Contact.find()
     .then(function(contacts) {
         res.send(contacts);
     })
@@ -18,7 +18,7 @@ router.post('/', function(req, res, next) {
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name
     });
-    contact.saveAsync()
+    contact.save()
     .then(function(contact) {
         res.send(contact);
     })
@@ -27,7 +27,7 @@ router.post('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-    Contact.findOneAsync({ _id: req.params.id })
+    Contact.findOne({ _id: req.params.id })
     .then(function(contact) {
         res.send(contact);
     })
@@ -36,7 +36,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.put('/:id', function(req, res, next) {
-    Contact.updateAsync({ _id: req.params.id }, req.body)
+    Contact.update({ _id: req.params.id }, req.body)
     .then(function(contact) {
         res.send(contact);
     })
@@ -45,7 +45,7 @@ router.put('/:id', function(req, res, next) {
 });
 
 router.delete('/:id', function(req, res, next) {
-    Contact.findByIdAndRemoveAsync(req.params.id)
+    Contact.findByIdAndRemove(req.params.id)
     .then(function(contact) {
         res.send(contact);
     })

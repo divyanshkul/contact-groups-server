@@ -4,7 +4,7 @@ var router = express.Router();
 var Group = require('../../models/groups.js');
 
 router.get('/', function(req, res, next) {
-    Group.findAsync()
+    Group.find()
     .then(function(groups) {
         res.send(groups);
     })
@@ -17,7 +17,7 @@ router.post('/', function(req, res, next) {
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name
     });
-    group.saveAsync()
+    group.save()
     .then(function(group) {
         res.send(group);
     })
@@ -26,7 +26,7 @@ router.post('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-    Group.findOneAsync({ _id: req.params.id })
+    Group.findOne({ _id: req.params.id })
     .then(function(group) {
         res.send(group);
     })
@@ -35,7 +35,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.put('/:id', function(req, res, next) {
-    Group.updateAsync({ _id: req.params.id }, req.body)
+    Group.update({ _id: req.params.id }, req.body)
     .then(function(group) {
         res.send(group);
     })
@@ -44,7 +44,7 @@ router.put('/:id', function(req, res, next) {
 });
 
 router.delete('/:id', function(req, res, next) {
-    Group.findByIdAndRemoveAsync(req.params.id)
+    Group.findByIdAndRemove(req.params.id)
     .then(function(group) {
         res.send(group);
     })

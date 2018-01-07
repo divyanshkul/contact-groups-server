@@ -5,26 +5,24 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var Promise = require('bluebird');
 
 var index = require('./routes/index');
 var api = require('./routes/api.js');
 
 var app = express();
 
-var mongoDb = process.env.MONGODB_URI || 'mongodb://localhost';
 
-mongoose.connect(mongoDb + '/contact-groups', function(err) {
-    if (err) {
-      console.log("connection to mongo failed");
-    }
-});
+const bluebird = require('bluebird');
+mongoose.Promise = bluebird;
 
-Promise.promisifyAll(mongoose);
+const mongoUri = (process.env.MONGODB_URI || "mongodb://localhost") + "/contact-groups";
+mongoose.connect(mongoUri, {useMongoClient: true})
+    .then(() => console.log("Successfully connected to MongoDB"))
+    .catch(() => console.log("Failed to connect to MongoDB"));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set("view engine", "pug");
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
